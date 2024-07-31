@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vipul Krishna Mathuria - Software Developer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+            background: #f4f4f4;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 1.8em;
+        }
+        .contact-info {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .contact-info div {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .contact-info a {
+            color: #4caf50;
+            text-decoration: none;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        .icon {
+            width: 16px;
+            height: 16px;
+            fill: #4caf50;
+        }
+        section {
+            padding: 20px;
+            margin: 0 auto;
+            max-width: 900px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .summary, .education, .experience, .coding-profiles, .certifications, .skills {
+            margin-bottom: 20px;
+        }
+        h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+            font-size: 1.5em;
+        }
+        h3 {
+            font-size: 1.2em;
+            margin-top: 0;
+        }
+        h4 {
+            font-size: 1em;
+            margin-top: 0;
+            color: #666;
+        }
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .skills .skill {
+            margin-bottom: 20px;
+        }
+        .skill .skill-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .skill .skill-bar {
+            background: #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            position: relative;
+            height: 20px;
+        }
+        .skill .skill-bar .skill-level {
+            background: #4caf50;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .skill .skill-stars {
+            font-size: 1em;
+            color: #f39c12;
+        }
+        .graph {
+            width: 100%;
+            height: 200px;
+            margin: 20px 0;
+        }
+        .skill-proficiency {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .skill-item {
+            flex: 1 1 45%;
+            margin: 10px 0;
+        }
+        .skill-item h3 {
+            margin: 0;
+            font-size: 1.2em;
+        }
+        .skill-item .skill-level-bar {
+            background: #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            height: 20px;
+            margin-top: 5px;
+        }
+        .skill-item .skill-level-bar .level {
+            background: #4caf50;
+            height: 100%;
+            width: 0;
+            transition: width 1s ease-in-out;
+        }
+        .skill-item .skill-description {
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Vipul Krishna Mathuria</h1>
+        <div class="contact-info">
+            <div>
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M4 10v2h16v-2H4zm0 4v2h16v-2H4zm0-8v2h16V6H4z"/></svg>
+                <p><a href="tel:+918727039860">+91-8727039860</a></p>
+            </div>
+            <div>
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12s4.48 10 10 10 10-4.48 10-10zm-10 7c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7zm-1-12h2v5h-2zm0 7h2v2h-2z"/></svg>
+                <p><a href="mailto:vipul07.mathuria@gmail.com">vipul07.mathuria@gmail.com</a></p>
+            </div>
+            <div>
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M21 6h-6V4H9v2H3v16h18V6z"/></svg>
+                <p><a href="https://github.com/vipul1999" target="_blank">GitHub</a></p>
+            </div>
+            <div>
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M22 2H2v20h20V2zm-2 18H4V4h16v16z"/></svg>
+                <p><a href="https://www.linkedin.com/in/vipul-krishna-mathuria/" target="_blank">LinkedIn</a></p>
+            </div>
+        </div>
+    </header>
+
+    <section class="summary">
+        <h2>Summary</h2>
+        <p>As a Java Backend Developer with over 2.6 years of experience at Delhivery and currently a Software Development Engineer II at Jar App, I have honed my skills in Java, Spring Boot, REST, Kafka, PostgreSQL, and AWS. I excel in designing and implementing scalable backend solutions, optimizing system performance, and solving complex technical challenges. My career is marked by significant contributions to backend infrastructure and system enhancements, with a strong focus on problem-solving, adaptability, and continuous improvement.</p>
+    </section>
+
+    <section class="education">
+        <h2>Education</h2>
+        <p><strong>Dr. B R Ambedkar National Institute of Technology, Jalandhar, Punjab</strong><br>
+        Bachelor of Technology in Computer Science & Engineering | C.G: 7.05</p>
+        <p><strong>Chhatrapati Shivaji School, Kota, Rajasthan</strong><br>
+        12th RBSE Board, Science-Mathematics | 89%</p>
+        <p><strong>Ganesh Adarsh Vidya Mandir, Sawai-Madhopur, Rajasthan</strong><br>
+        10th RBSE Board | 96.5%</p>
+    </section>
+
+    <section class="skills">
+        <h2>Skill Proficiency Overview</h2>
+        <div class="skill-proficiency">
+            <div class="skill-item">
+                <h3>Java</h3>
+                <div class="skill-level-bar">
+                    <div class="level" style="width: 90%;"></div>
+                </div>
+                <p class="skill-description">Extensive experience in Java programming, including creating scalable applications and optimizing performance.</p>
+            </div>
+            <div class="skill-item">
+                <h3>Spring Boot</h3>
+                <div class="skill-level-bar">
+                    <div class="level" style="width: 85%;"></div>
+                </div>
+                <p class="skill-description">Proficient in building robust microservices with Spring Boot, implementing various enterprise-level applications.</p>
+            </div>
+            <div class="skill-item">
+                <h3>REST APIs</h3>
+                <div class="skill-level-bar">
+                    <div class="level" style="width: 80%;"></div>
+                </div>
+                <p class="skill-description">Strong knowledge in designing and consuming RESTful APIs for efficient data exchange and integration.</p>
+            </div>
+            <div class="skill-item">
+                <h3>Kafka</h3>
+                <div class="skill-level-bar">
+                    <div class="level" style="width: 75%;"></div>
+                </div>
+                <p class="skill-description">Experience with Kafka for handling real-time data processing and messaging.</p>
+            </div>
+            <div class="skill-item">
+                <h3>PostgreSQL</h3>
+                <div class="skill-level-bar">
+                    <div class="level" style="width: 80%;"></div>
+                </div>
+                <p class="skill-description">Competent in PostgreSQL database management, including complex queries and performance tuning.</p>
+            </div>
+            <div class="skill-item">
+                <h3>AWS</h3>
+                <div class="skill-level-bar">
+                    <div class="level" style="width: 70%;"></div>
+                </div>
+                <p class="skill-description">Proficient in using AWS services for scalable cloud solutions and deployment.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="experience">
+        <h2>Experience</h2>
+        <h3>Software Development Engineer II at Jar App</h3>
+        <p><strong>June 2024 - Present</strong></p>
+        <ul>
+            <li>Developed high transaction value user cohorts to handle data efficiently.</li>
+            <li>Managed S3 bucket backup storage to ensure reliable data storage.</li>
+        </ul>
+
+        <h3>Java Backend Developer at Delhivery</h3>
+        <p><strong>June 2021 - May 2024</strong></p>
+        <p>At Delhivery, I started with the Telescope team where I developed a user data permission module to ensure users accessed only relevant data. I also created listing APIs, including shipment content, summary, and various filters, and implemented CSV download/upload functionalities for orders and serviceability. My role also involved addressing production bugs and ensuring the encryption of PII data.</p>
+        <p>Later, in the WMS team, I contributed to features such as the Bundle Pickwave, which integrated traits from existing pickwaves to enhance warehouse operations. I also supported multiple containers in picklists, improved event tracking, and managed physical entities like zones and locations. These efforts improved inventory management and streamlined warehouse processes.</p>
+    </section>
+
+    <section class="coding-profiles">
+        <h2>Coding Profiles</h2>
+        <p><strong>GeekForGeeks:</strong> Solved 560+ Data Structure Coding Problems. See my profile at <a href="http://bit.ly/gfg-vk" target="_blank">bit.ly/gfg-vk</a></p>
+        <p><strong>HackerRank:</strong> Achieved 5-star Golden Badge in problem-solving, C++, Java, SQL, Python. Visit my profile at <a href="http://bit.ly/hkrnvkm" target="_blank">bit.ly/hkrnvkm</a></p>
+    </section>
+
+    <section class="certifications">
+        <h2>Certifications & Achievements</h2>
+        <ul>
+            <li>Backend Developer Fellowship by Crio.Do, 8 Week, Virtual. <a href="http://bit.ly/criovkm" target="_blank">bit.ly/criovkm</a></li>
+            <li>AT&T Summer Learning Academy Externship, 4-week-long virtual development training. <a href="http://bit.ly/atntvkm" target="_blank">bit.ly/atntvkm</a></li>
+            <li>HP Summer Scholars, 6-week virtual development, delivered a solution in a team of 8. <a href="http://bit.ly/hpssvkm" target="_blank">bit.ly/hpssvkm</a></li>
+            <li>1099 Global Rank in Google Kick Start 2020 Round H. <a href="http://bit.ly/37LXQwW" target="_blank">bit.ly/37LXQwW</a></li>
+            <li>Software Engineering Virtual Experience by JPMorgan on Inside-Sherpa. <a href="http://bit.ly/3qEJXZU" target="_blank">bit.ly/3qEJXZU</a></li>
+            <li>Technical Support Fundamentals by Grow with Google on Coursera. <a href="http://bit.ly/2VUxenT" target="_blank">bit.ly/2VUxenT</a></li>
+        </ul>
+    </section>
+</body>
+</html>
