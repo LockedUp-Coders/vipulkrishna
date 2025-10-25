@@ -5,287 +5,671 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vipul Krishna Mathuria - Software Developer</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        :root {
+            --color-primary: #2563eb;
+            --color-primary-dark: #1e40af;
+            --color-secondary: #10b981;
+            --color-text: #1f2937;
+            --color-text-light: #6b7280;
+            --color-bg: #ffffff;
+            --color-bg-alt: #f9fafb;
+            --color-border: #e5e7eb;
+            --color-accent: #8b5cf6;
+        }
+
+        * {
             margin: 0;
             padding: 0;
-            line-height: 1.6;
-            color: #333;
-            background: #f4f4f4;
+            box-sizing: border-box;
         }
-        header {
-            background: #333;
-            color: #fff;
-            padding: 10px 20px;
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--color-text);
+            background: var(--color-bg-alt);
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .title {
+            font-size: 1.25rem;
+            opacity: 0.95;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .contact-links a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+
+        .contact-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .section {
+            background: var(--color-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            font-size: 1.75rem;
+            color: var(--color-primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 3px solid var(--color-primary);
+        }
+
+        .section h3 {
+            font-size: 1.35rem;
+            color: var(--color-text);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .section h4 {
+            font-size: 1.1rem;
+            color: var(--color-text-light);
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .job-title {
+            font-size: 1.35rem;
+            color: var(--color-text);
+            font-weight: 600;
+        }
+
+        .job-duration {
+            color: var(--color-text-light);
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .company-name {
+            color: var(--color-primary);
+            font-weight: 600;
+        }
+
+        ul {
+            margin-left: 1.5rem;
+            margin-top: 0.75rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            color: var(--color-text);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .skill-category {
+            background: var(--color-bg-alt);
+            padding: 1.25rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--color-primary);
+        }
+
+        .skill-category h4 {
+            color: var(--color-primary);
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            margin-top: 0;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: var(--color-text);
+            border: 1px solid var(--color-border);
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #fef3c7 0%, #fde68a 100%);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #f59e0b;
+            margin: 1rem 0;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .stat-card {
+            background: var(--color-bg-alt);
+            padding: 1.25rem;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid var(--color-border);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+
+        .stat-label {
+            color: var(--color-text-light);
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--color-secondary);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-right: 0.5rem;
+        }
+
+        /* Timeline Styles */
+        .timeline {
+            position: relative;
+            padding-left: 50px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--color-primary);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -37px;
+            top: 8px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: white;
+            border: 4px solid var(--color-primary);
+            z-index: 1;
+        }
+
+        .timeline-badge {
+            display: inline-block;
+            background: var(--color-primary);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Accordion Styles */
+        .job-accordion {
+            background: #2d3748;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .accordion-button {
+            background: #2d3748;
+            color: white;
+            cursor: pointer;
+            padding: 1.25rem 1.5rem;
+            width: 100%;
+            text-align: left;
+            border: none;
+            outline: none;
+            transition: all 0.3s;
+            font-size: 1.15rem;
+            font-weight: 600;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
         }
-        header h1 {
-            margin: 0;
-            font-size: 1.8em;
+
+        .accordion-button:hover {
+            background: #374151;
         }
-        .contact-info {
-            display: flex;
-            align-items: center;
-            gap: 20px;
+
+        .accordion-button.active {
+            background: #374151;
         }
-        .contact-info div {
-            display: flex;
-            align-items: center;
-            gap: 8px;
+
+        .accordion-button::after {
+            content: '+';
+            font-size: 1.8rem;
+            font-weight: 300;
+            transition: transform 0.3s;
+            color: white;
         }
-        .contact-info a {
-            color: #4caf50;
-            text-decoration: none;
+
+        .accordion-button.active::after {
+            content: '−';
         }
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-        .icon {
-            width: 16px;
-            height: 16px;
-            fill: #4caf50;
-        }
-        section {
-            padding: 20px;
-            margin: 0 auto;
-            max-width: 900px;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-        }
-        .summary, .education, .experience, .coding-profiles, .certifications, .skills {
-            margin-bottom: 20px;
-        }
-        h2 {
-            border-bottom: 2px solid #333;
-            padding-bottom: 5px;
-            font-size: 1.5em;
-        }
-        h3 {
-            font-size: 1.2em;
-            margin-top: 0;
-        }
-        h4 {
-            font-size: 1em;
-            margin-top: 0;
-            color: #666;
-        }
-        a {
-            color: #0066cc;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .skills .skill {
-            margin-bottom: 20px;
-        }
-        .skill .skill-name {
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-        .skill .skill-bar {
-            background: #ddd;
-            border-radius: 5px;
+
+        .accordion-panel {
+            padding: 0;
+            max-height: 0;
             overflow: hidden;
-            position: relative;
-            height: 20px;
+            background: var(--color-bg-alt);
+            transition: max-height 0.4s ease-out, padding 0.4s ease-out;
         }
-        .skill .skill-bar .skill-level {
-            background: #4caf50;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
+
+        .accordion-panel.active {
+            padding: 1.5rem;
+            max-height: 5000px;
         }
-        .skill .skill-stars {
-            font-size: 1em;
-            color: #f39c12;
+
+        .accordion-panel h4 {
+            color: var(--color-text);
+            margin: 1.25rem 0 0.75rem 0;
+            font-size: 1.15rem;
+            font-weight: 700;
         }
-        .graph {
-            width: 100%;
-            height: 200px;
-            margin: 20px 0;
+
+        .accordion-panel ul {
+            margin-left: 1.5rem;
+            margin-top: 0.5rem;
         }
-        .skill-proficiency {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
+
+        .accordion-panel li {
+            margin-bottom: 0.6rem;
+            line-height: 1.6;
+            color: var(--color-text);
         }
-        .skill-item {
-            /* flex: 1 1 10%;
-            margin: 1px 0; */
+
+        .accordion-panel strong {
+            color: var(--color-text);
         }
-        .skill-item h5 {
-            margin: 0;
-            font-size: 1em;
-        }
-        .skill-item .skill-level-bar {
-            background: #ddd;
-            border-radius: 5px;
-            overflow: hidden;
-            height: 20px;
-            margin-top: 5px;
-        }
-        .skill-item .skill-level-bar .level {
-            background: #4caf50;
-            height: 100%;
-            width: 0;
-            transition: width 1s ease-in-out;
-        }
-        .skill-item .skill-description {
-            margin-top: 10px;
-            font-size: 0.9em;
-            color: #666;
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+            
+            .job-header {
+                flex-direction: column;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
+    <header class="header">
         <h1>Vipul Krishna Mathuria</h1>
-        <div class="contact-info">
-            <div>
-                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M4 10v2h16v-2H4zm0 4v2h16v-2H4zm0-8v2h16V6H4z"/></svg>
-                <p><a href="tel:+918727039860">+91-8727039860</a></p>
-            </div>
-            <div>
-                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12s4.48 10 10 10 10-4.48 10-10zm-10 7c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7zm-1-12h2v5h-2zm0 7h2v2h-2z"/></svg>
-                <p><a href="mailto:vipul07.mathuria@gmail.com">vipul07.mathuria@gmail.com</a></p>
-                
-            </div>
-            <div>
-                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M21 6h-6V4H9v2H3v16h18V6z"/></svg>
-                <p><a href="https://github.com/vipul1999" target="_blank">GitHub</a></p>
-            </div>
-            <div>
-                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M22 2H2v20h20V2zm-2 18H4V4h16v16z"/></svg>
-                <p><a href="https://www.linkedin.com/in/vipulkrishna/" target="_blank">LinkedIn</a></p>
-            </div>
+        <p class="title">Software Development Engineer II • Spring Boot • Kafka • AWS • Microservices</p>
+        <div class="contact-links">
+            <a href="tel:+918727039860">📞 +91-8727039860</a>
+            <a href="mailto:vipul07.mathuria@gmail.com">✉️ vipul07.mathuria@gmail.com</a>
+            <a href="https://github.com/vipul1999" target="_blank">🔗 GitHub</a>
+            <a href="https://www.linkedin.com/in/vipulkrishna/" target="_blank">💼 LinkedIn</a>
+            <a href="https://bit.ly/resume-vipul" target="_blank">📄 Resume</a>
         </div>
     </header>
 
-    <section class="summary">
-        <h2>Summary</h2>
-        <p>As a Java Backend Developer with over 2.6 years of experience at Delhivery and currently a Software Development Engineer II at Jar App, I have honed my skills in Java, Spring Boot, REST, Kafka, PostgreSQL, and AWS. I excel in designing and implementing scalable backend solutions, optimizing system performance, and solving complex technical challenges. My career is marked by significant contributions to backend infrastructure and system enhancements, with a strong focus on problem-solving, adaptability, and continuous improvement.</p>
-    </section>
+    <div class="container">
+        <section class="section">
+            <h2>Professional Summary</h2>
+            <p>Software Development Engineer II with <strong>3.8+ years</strong> of hands-on experience building scalable backend systems at Jar App, Delhivery, and Infogain. Expert in <strong>Java, Spring Boot, Kafka, PostgreSQL, and AWS</strong>, with a proven track record of delivering <strong>20+ critical features</strong> and optimizing systems to achieve <strong>75% latency reduction</strong>. Passionate about solving complex technical challenges and driving business impact through efficient, maintainable code.</p>
+            
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-number">3.8+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">Features Delivered</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">75%</div>
+                    <div class="stat-label">Latency Reduction</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">560+</div>
+                    <div class="stat-label">DSA Problems Solved</div>
+                </div>
+            </div>
+        </section>
 
-    <section class="education">
-        <h2>Education</h2>
-        <p><strong>Dr. B R Ambedkar National Institute of Technology, Jalandhar, Punjab</strong><br>
-        Bachelor of Technology in Computer Science & Engineering | C.G: 7.05</p>
-        <p><strong>Chhatrapati Shivaji School, Kota, Rajasthan</strong><br>
-        12th RBSE Board, Science-Mathematics | 89%</p>
-        <p><strong>Ganesh Adarsh Vidya Mandir, Sawai-Madhopur, Rajasthan</strong><br>
-        10th RBSE Board | 96.5%</p>
-    </section>
+        <section class="section">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Backend Technologies</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">Spring Boot</span>
+                        <span class="skill-tag">REST APIs</span>
+                        <span class="skill-tag">Microservices</span>
+                        <span class="skill-tag">Python</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>Databases</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">Cosmos DB</span>
+                        <span class="skill-tag">Elasticsearch</span>
+                        <span class="skill-tag">SQL Optimization</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>Cloud & DevOps</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Azure</span>
+                        <span class="skill-tag">S3</span>
+                        <span class="skill-tag">CloudWatch</span>
+                        <span class="skill-tag">Devtron</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>Messaging & Tools</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Kafka</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">New Relic</span>
+                        <span class="skill-tag">Grafana</span>
+                        <span class="skill-tag">Postman</span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section class="skills">
-        <h2>Skill Proficiency Overview</h2>
-        <div class="skill-proficiency">
-            <div class="skill-item">
-                <h4>Java</h4>
-            </div>
-            <div class="skill-item">
-                <h4>Spring Boot</h4>
-            </div>
-            <div class="skill-item">
-                <h4>REST APIs</h4>
-            </div>
-            <div class="skill-item">
-                <h4>Kafka</h4>
-            </div>
-            <div class="skill-item">
-                <h4>PostgreSQL</h4>
-            </div>
-            <div class="skill-item">
-                <h4>AWS</h4>
-            </div>
-        </div>
-    </section>
+        <section class="section">
+            <h2>Professional Experience</h2>
 
-    <section class="experience">
-        <h2>Experience</h2>
-        <h3>Software Development Engineer II at Jar App</h3>
-        <p><strong>June 2024 - Present</strong></p>
-        <ul>
-            <li>Developed high transaction value user cohorts to handle data efficiently.</li>
-            <li>Managed S3 bucket backup storage to ensure reliable data storage.</li>
-        </ul>
+            <div class="timeline">
+                <!-- Infogain Experience -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <span class="timeline-badge">Aug 2024 - Aug 2025</span>
+                    
+                    <div class="job-accordion">
+                        <button class="accordion-button">
+                            <span><strong>Java Backend Developer</strong> @ Infogain</span>
+                        </button>
+                <div class="accordion-panel">
+                    <div class="highlight">
+                        <strong>🏦 Domain:</strong> Financial Services - Insurance planning and proposal management platform for PACS Singapore
+                    </div>
 
-        <h3>Java Backend Developer at Delhivery</h3>
-        <p><strong>June 2021 - Dec 2023</strong></p>
-        <h4>Features Delivered in Telescope (First 8 Months)</h4>
-        <ul>
-            <li>Built a user data permission module to restrict data visibility to relevant users.</li>
-            <li>Developed listing APIs including:
+                    <h4>PruJourney / PruPlanner Platform</h4>
+                    <ul>
+                        <li>Worked on <strong>microservices architecture</strong> for comprehensive insurance journey management covering financial planning, proposals, payments, and submissions</li>
+                        <li><strong>Tech Stack:</strong> Java (Spring Boot), Cosmos DB (NoSQL), Azure Monitors, FTL templates, automated CI/CD pipelines</li>
+                    </ul>
+
+                    <h4>Key Microservices Developed</h4>
+                    <ul>
+                        <li><strong>Planner Service:</strong> Managed planners/advisors, allocation via AG (Agent Groups) & AD (Affinity Distribution)</li>
+                        <li><strong>Client Service:</strong> Customer data management, onboarding, KYC processes</li>
+                        <li><strong>FNA Service:</strong> Financial Needs Analysis engine for personalized insurance recommendations</li>
+                        <li><strong>Proposal Service:</strong> Draft and finalize insurance proposals with validation</li>
+                        <li><strong>Payment Service:</strong> Integrated payment gateways (Standard Chartered Bank, United Overseas Bank)</li>
+                        <li><strong>Signature Service:</strong> Digital signature capture and validation</li>
+                        <li><strong>Submission Service:</strong> Final application submission to backend insurance systems</li>
+                    </ul>
+
+                    <h4>Infrastructure & Integration</h4>
+                    <ul>
+                        <li>Worked with <strong>Cosmos DB</strong> for high-availability NoSQL data storage</li>
+                        <li>Implemented monitoring and logging using <strong>Azure Monitors</strong></li>
+                        <li>Built <strong>CI/CD pipelines</strong> for automated deployments</li>
+                        <li>Created <strong>FTL (Freemarker) templates</strong> for dynamic front-end rendering from backend data</li>
+                        <li>Integrated APIs with <strong>SCB and UOB</strong> for payment flows and verification</li>
+                        <li>Managed <strong>local replication</strong> environments for comprehensive testing</li>
+                    </ul>
+                </div>
+                    </div>
+                </div>
+
+                <!-- Jar App Experience -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <span class="timeline-badge">May 2024 - June 2024</span>
+                    
+                    <div class="job-accordion">
+                        <button class="accordion-button">
+                            <span><strong>Software Development Engineer II</strong> @ Jar App</span>
+                        </button>
+                <div class="accordion-panel">
+                    <div class="highlight">
+                        <strong>🎯 Key Impact:</strong> Led data-driven experimentation and infrastructure improvements for a fintech savings platform, focusing on user engagement and system reliability.
+                    </div>
+
+                    <h4>User Cohort Analysis & MCAP Reduction Daily Recurrence (MRDR) Experiment</h4>
+                    <ul>
+                        <li>Spearheaded creation of <strong>user cohort-based coupons</strong> for Daily Saving UPI auto-pay setup users, analyzing behavior patterns to enhance engagement</li>
+                        <li>Designed and executed <strong>MRDR experiment</strong> with 4 new user cohorts testing variations in MCAP amounts (₹30 vs ₹50) and expiry settings (once-in-lifetime vs daily)</li>
+                        <li>Managed <strong>15-day experiment lifecycle</strong> with real-time monitoring and iterative optimization based on conversion rates and retention metrics</li>
+                        <li>Delivered actionable insights that informed ongoing user retention strategies, improving overall app value proposition</li>
+                    </ul>
+
+                    <h4>Infrastructure & Data Management</h4>
+                    <ul>
+                        <li>Implemented <strong>S3 bucket backup storage</strong> for CleverTap notification delivery acknowledgment, ensuring reliable and scalable data storage</li>
+                        <li>Developed <strong>high transaction value user cohorts</strong> to handle data efficiently and offer personalized services to premium users</li>
+                        <li>Configured AWS permissions, policies, and integrated with CleverTap notification system for data integrity</li>
+                    </ul>
+                </div>
+                    </div>
+                </div>
+
+                <!-- Delhivery Experience -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <span class="timeline-badge">June 2021 - Dec 2023</span>
+                    
+                    <div class="job-accordion">
+                        <button class="accordion-button">
+                            <span><strong>Java Backend Developer</strong> @ Delhivery</span>
+                        </button>
+                <div class="accordion-panel">
+                    <div class="highlight">
+                        <strong>🚀 Major Achievement:</strong> Reduced API response time from 8s to 2s and scaled CSV processing from 125 rows to 10K rows in 4 seconds through async processing and optimization.
+                    </div>
+
+                    <h4>Telescope Platform (First 8 Months)</h4>
+                    <ul>
+                        <li>Built <strong>user data permission module</strong> restricting data visibility to authorized users for FCs, orders, shipments, and products</li>
+                        <li>Developed <strong>10+ listing APIs</strong> including shipment content, summary, invoice awaiting truck, and serviceability with advanced filters</li>
+                        <li>Created <strong>CSV download/upload APIs</strong> for order bulk operations and serviceability management</li>
+                        <li>Handled <strong>encryption/decryption of PII data</strong> for consignee information, ensuring GDPR compliance</li>
+                        <li>Fixed critical production bugs impacting warehouse operations</li>
+                    </ul>
+
+                    <h4>WMS (Warehouse Management System) - 1 Year 8 Months</h4>
+                    <ul>
+                        <li><strong>Bundle Pickwave:</strong> Added new pick-wave type inheriting traits from multi and bulk pickwaves, improving warehouse flexibility</li>
+                        <li><strong>Multi Container in Picklist:</strong> Enabled multiple containers per picklist with minimal code changes; optimized notifications from picklist to container level</li>
+                        <li><strong>Event Tracking:</strong> Implemented comprehensive user, activity, and device-level tracking for all inbound/outbound WMS events with Kafka integration</li>
+                        <li><strong>Tag Assignment & FMS Validation:</strong> Managed tag entities for client inventory conditions, validated FMS categories during transfers</li>
+                        <li><strong>Facility Layout:</strong> Developed physical entity representation (zones, locations, containers) with bulk upload/download capabilities</li>
+                        <li><strong>ODMZero:</strong> Built courier assignment logic based on weight, price, and serviceability for optimal order allocation</li>
+                    </ul>
+
+                    <h4>Technical Optimizations & Infrastructure</h4>
+                    <ul>
+                        <li>Implemented <strong>non-blocking async API calls</strong> using CompletableFuture, reducing response time from <strong>8s → 2s</strong></li>
+                        <li>Optimized CSV processing with batch operations and streaming, scaling from <strong>125 rows → 10K rows in 4s</strong></li>
+                        <li>Created/updated <strong>Elasticsearch endpoints</strong> for efficient object indexing and management</li>
+                        <li>Built <strong>third-party API integration utilities</strong> with encryption support for privacy-sensitive data</li>
+                        <li>Configured <strong>AWS CloudWatch alarms</strong> and monitoring for production health metrics</li>
+                        <li>Advanced <strong>Git operations</strong>: cherry-picking, rebasing, merge conflict resolution, commit recovery</li>
+                    </ul>
+
+                    <h4>Proactive Contributions</h4>
+                    <ul>
+                        <li>Updated <strong>Devtron deployment strategies</strong> to reduce downtime; added envoy-proxy for advanced metric tracing</li>
+                        <li>Monitored resources via <strong>New Relic</strong>: CPU, memory, throughput, latency, error rates with custom NRQL queries</li>
+                        <li>Successfully integrated <strong>Codacy tool</strong> across 20+ WMS services for static code analysis</li>
+                        <li>Managed 5 major features involving 15+ stakeholders from PRD to release</li>
+                    </ul>
+
+                    <h4>Python Services Work</h4>
+                    <ul>
+                        <li>Built Python API and fixed critical issues in <strong>waybill generation service</strong> during resource crunch</li>
+                        <li>Maintained services: wms-document-generation, wms-reports-lambda, wms-cycle-count, COMS service</li>
+                        <li>COMS service ownership: managed routing system communicating with HQ service across 5 internal services</li>
+                    </ul>
+                </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Education</h2>
+            <h3>Dr. B R Ambedkar National Institute of Technology, Jalandhar</h3>
+            <p><strong>Bachelor of Technology in Computer Science & Engineering</strong> | CGPA: 7.05</p>
+            
+            <div style="margin-top: 1.5rem;">
+                <h4>Academic Achievements</h4>
                 <ul>
-                    <li>Shipment content listing API</li>
-                    <li>Shipment summary API</li>
-                    <li>Invoice awaiting truck listing</li>
-                    <li>Serviceability listing</li>
-                    <li>Order number, waybill number, and invoice number filters on order listing</li>
+                    <li><strong>Silver Medal</strong> - 7th State Merit in 10th Board by Rajasthan Board (2014)</li>
+                    <li><strong>JEE Main 2017</strong> - General Rank: 8,811 out of 1.3 Million participants</li>
                 </ul>
-            </li>
-            <li>Worked on CSV download/upload APIs including:
-                <ul>
-                    <li>Order bulk download</li>
-                    <li>Serviceability bulk upload and download</li>
-                </ul>
-            </li>
-            <li>Fixed production bugs, and handled encryption and decryption of PII data.</li>
-        </ul>
+            </div>
+        </section>
 
-        <h4>Features Delivered in WMS (1 Year 8 Months)</h4>
-        <ul>
-            <li><strong>Bundle Pickwave:</strong> Added support for a new pick-wave type inheriting traits from multi and bulk pickwaves.</li>
-            <li><strong>Multi Container in Picklist:</strong> Supported multiple containers in a picklist with minimal code changes, and optimized notifications.</li>
-            <li><strong>Event Tracking:</strong> Implemented user, activity, and user-device level event tracking in WMS.</li>
-            <li><strong>Tag Assignment and FMS Validation:</strong> Managed tag entities for client inventory, and validated FMS categories during inventory transfer.</li>
-            <li><strong>Facility Layout and Improvements:</strong> Developed features for physical entity representation and management in WMS.</li>
-            <li><strong>Empty Container Handling:</strong> Addressed cases where movable containers had no inventory in bulk consolidation flows.</li>
-            <li><strong>ODMZero:</strong> Implemented courier assignment for order allocation based on weight, price, and courier serviceability.</li>
-        </ul>
+        <section class="section">
+            <h2>Coding Profiles & Competitive Programming</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>🏆 GeeksforGeeks</h4>
+                    <p><strong>560+ Problems Solved</strong></p>
+                    <a href="http://bit.ly/gfg-vk" target="_blank" style="color: var(--color-primary);">View Profile →</a>
+                </div>
+                <div class="skill-category">
+                    <h4>⭐ HackerRank</h4>
+                    <p><strong>5-Star Golden Badge</strong></p>
+                    <p>Problem Solving, C++, Java, SQL, Python</p>
+                    <a href="http://bit.ly/hkrnvkm" target="_blank" style="color: var(--color-primary);">View Profile →</a>
+                </div>
+                <div class="skill-category">
+                    <h4>💻 LeetCode</h4>
+                    <p><strong>110+ Problems Solved</strong></p>
+                    <a href="https://bit.ly/lcvipul" target="_blank" style="color: var(--color-primary);">View Profile →</a>
+                </div>
+                <div class="skill-category">
+                    <h4>🎯 Google Kick Start 2020</h4>
+                    <p><strong>Global Rank: 1099</strong></p>
+                    <p>Round H</p>
+                    <a href="http://bit.ly/37LXQwW" target="_blank" style="color: var(--color-primary);">View Certificate →</a>
+                </div>
+            </div>
+        </section>
 
-        <h4>Technical Work</h4>
-        <ul>
-            <li>Implemented non-blocking async API calls, reducing API response time from 8 seconds to 2 seconds.</li>
-            <li>Optimized CSV upload APIs to handle 10K rows in 4 seconds.</li>
-            <li>Created and updated Elastic Search endpoints for efficient object management.</li>
-            <li>Developed utility methods for third-party API integration, ensuring privacy and data security.</li>
-            <li>Implemented AWS CloudWatch alarms and updated response handling strategies.</li>
-            <li>Contributed to Git repository management, including advanced commands and error resolution.</li>
-        </ul>
-    </section>
+        <section class="section">
+            <h2>Certifications & Training</h2>
+            <ul>
+                <li><strong>Backend Developer Fellowship</strong> - Crio.Do (8-week virtual program) <a href="http://bit.ly/criovkm" target="_blank">→</a></li>
+                <li><strong>AT&T Summer Learning Academy Externship</strong> - 4-week virtual development training <a href="http://bit.ly/atntvkm" target="_blank">→</a></li>
+                <li><strong>HP Summer Scholars</strong> - 6-week virtual development, team of 8 <a href="http://bit.ly/hpssvkm" target="_blank">→</a></li>
+                <li><strong>Software Engineering Virtual Experience</strong> - JPMorgan on Inside-Sherpa <a href="http://bit.ly/3qEJXZU" target="_blank">→</a></li>
+                <li><strong>Technical Support Fundamentals</strong> - Grow with Google on Coursera <a href="http://bit.ly/2VUxenT" target="_blank">→</a></li>
+            </ul>
+        </section>
+    </div>
 
-    <section class="coding-profiles">
-        <h2>Coding Profiles</h2>
-        <p><strong>GeekForGeeks:</strong> Solved 560+ Data Structure Coding Problems. See my profile at <a href="http://bit.ly/gfg-vk" target="_blank">bit.ly/gfg-vk</a></p>
-        <p><strong>HackerRank:</strong> Achieved 5-star Golden Badge in problem-solving, C++, Java, SQL, Python. Visit my profile at <a href="http://bit.ly/hkrnvkm" target="_blank">bit.ly/hkrnvkm</a></p>
-        <p><strong>LeetCode:</strong> Solved 110+ problems, See my profile at <a href="https://bit.ly/lcvipul" target="_blank">https://bit.ly/lcvipul</a></p>
-    </section>
-
-    <section class="certifications">
-        <h2>Certifications</h2>
-        <ul>
-            <li>Backend Developer Fellowship by Crio.Do, 8 Week, Virtual. <a href="http://bit.ly/criovkm" target="_blank">bit.ly/criovkm</a></li>
-            <li>AT&T Summer Learning Academy Externship, 4-week-long virtual development training. <a href="http://bit.ly/atntvkm" target="_blank">bit.ly/atntvkm</a></li>
-            <li>HP Summer Scholars, 6-week virtual development, delivered a solution in a team of 8. <a href="http://bit.ly/hpssvkm" target="_blank">bit.ly/hpssvkm</a></li>
-            <li>1099 Global Rank in Google Kick Start 2020 Round H. <a href="http://bit.ly/37LXQwW" target="_blank">bit.ly/37LXQwW</a></li>
-            <li>Software Engineering Virtual Experience by JPMorgan on Inside-Sherpa. <a href="http://bit.ly/3qEJXZU" target="_blank">bit.ly/3qEJXZU</a></li>
-            <li>Technical Support Fundamentals by Grow with Google on Coursera. <a href="http://bit.ly/2VUxenT" target="_blank">bit.ly/2VUxenT</a></li>
-        </ul>
-    </section>
-    <section class="Achievements">
-        <h2>Achievements</h2>
-        <ul>
-            <li>Achieved a Silver Medal by Rajasthan Board for 7 th State Merit in the 10 th Board In 2014</li>
-            <li>JEE Main 2017 General Rank: 8811 out of 1.3 Million participants</li>
-        </ul>
-    
-    </section>
+    <script>
+        // Accordion functionality
+        const accordionButtons = document.querySelectorAll('.accordion-button');
+        
+        accordionButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Toggle active class on button
+                this.classList.toggle('active');
+                
+                // Get the panel
+                const panel = this.nextElementSibling;
+                
+                // Toggle active class on panel
+                panel.classList.toggle('active');
+            });
+        });
+    </script>
 </body>
 </html>
